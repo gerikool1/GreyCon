@@ -1,8 +1,10 @@
-﻿using System;
+﻿using GreyCon.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+
 
 namespace GreyCon.Controllers
 {
@@ -11,7 +13,12 @@ namespace GreyCon.Controllers
         // GET: DiskSpace
         public ActionResult Index()
         {
-            return View();
+            List<int> listUsed = new List<int> { 350, 800, 450 };
+            List<int> listTest = new List<int> { 600, 1000, 500 };
+
+            DiskSpace.MinDrives(listUsed, listTest);
+
+                       return View();
         }
 
         // GET: DiskSpace/Details/5
