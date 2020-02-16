@@ -29,18 +29,27 @@ namespace GreyCon.Controllers
 
         // POST: DisksInput/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(int UsedMbs, int TotalMbs)
         {
-            try
-            {
-                // TODO: Add insert logic here
+            var model = new DisksInputViewModel();
+            var UsedSpace = new List<int>();
+            var TotalSpace = new List<int>();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            UsedSpace.Add(UsedMbs);
+            TotalSpace.Add(TotalMbs);
+
+            DiskSpace.MinDrives(UsedSpace,TotalSpace);
+            /* try
+              {
+                  // TODO: Add insert logic here
+
+                  return RedirectToAction("Create");
+              }
+              catch
+              {
+                  return View();
+              }*/
+            return View();
         }
 
         // GET: DisksInput/Edit/5

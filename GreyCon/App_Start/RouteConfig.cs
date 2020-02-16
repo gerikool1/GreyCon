@@ -16,7 +16,7 @@ namespace GreyCon
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "DiskSpace", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "DisksInput", action = "Create", id = UrlParameter.Optional }
             );
         }
     }

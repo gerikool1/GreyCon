@@ -5,7 +5,7 @@ using System.Web;
 
 namespace GreyCon.Models
 {
-    public class DiskEntryViewModel
+    public class DisksInputViewModel
     {
         public int Id { get; set; }
         public int UsedSpace { get; set; }

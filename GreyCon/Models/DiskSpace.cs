@@ -12,7 +12,7 @@ namespace GreyCon.Models
 
         public int DisksNeeded { get; set; }
 
-        public static  void MinDrives(List<int>listUsed, List<int>listTest)
+        public static int MinDrives(List<int>listUsed, List<int>listTest)
         {
             List<int> UsedTest = new List<int>();
             List<int> TotalTest = new List<int>();
@@ -26,17 +26,18 @@ namespace GreyCon.Models
             int LeftUsed = SumUsed - TotalTest[TotalTest.Count - i];
                 if (LeftUsed <= 0)
                 {
-
-                  Console.WriteLine("testssss"+ i);
-
+                    
+                  return i;
+                }
+                else
+                {
                     break;
                 }
-                
 
             }
 
-           
-
+            return TotalTest.Count ;
+;
         }
 
 

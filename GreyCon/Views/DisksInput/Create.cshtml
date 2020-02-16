@@ -1,33 +1,11 @@
-﻿@model GreyCon.Models.DiskEntryViewModel
-  @{ViewBag.Title = "Create";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@model GreyCon.Models.DisksInputViewModel
+@using (Html.BeginForm("Create", "DisksInput", FormMethod.Post))
+
+{
+    @Html.TextBoxFor(s => s.UsedMbs," ")
+    @Html.TextBoxFor(s => s.TotalMbs," ")
+    <input type="submit" name="Submit" value="Save" />
+
 }
 
-
-
 <h2>DisksEntry</h2>
-<div class="row">
-    <form asp-action="Create" asp-controller="DisksInput" method="post">
-        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-        <div class="form-group">
-            <label asp-for="DateCreated" class="control-label"></label>
-            <input asp-for="DateCreated" class="form-control" />
-            <span asp-validation-for="DateCreated" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="HoursWorked" class="control-label"></label>
-            <input asp-for="HoursWorked" class="form-control" />
-            <span asp-validation-for="HoursWorked" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="UsedSpace" class="control-label"></label>
-            <select asp-for="UsedSpace" asp-items="@(new SelectList(Model.UsedMbs))" class="form-control"><option>None</option></select>
-            <span asp-validation-for="UsedSpace" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="TotalSpace" class="control-label"></label>
-            <select asp-for="TotalSpace" asp-items="@(new SelectList(Model.TotalMbs))" class="form-control"><option>None</option></select>
-            <span asp-validation-for="TotalSpace" class="text-danger"></span>
-        </div>
-    </form>
-</div>

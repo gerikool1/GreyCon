@@ -136,7 +136,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Disk.cs" />
-    <Compile Include="Models\DiskEntryViewModel.cs" />
+    <Compile Include="Models\DisksInputViewModel.cs" />
     <Compile Include="Models\DiskSpace.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
